@@ -1,0 +1,16 @@
+{% extends "default.html" %}
+{% block title %}Remove Account from List{%  endblock %}
+{% block header %}Remove Account from {{ account_list.get_name() }} List{% endblock %}
+{% block content %}
+<p>
+    <form method="GET" action="/remove_account_from_list">
+    <select name="account_name">
+        {%  for account in account_list %}
+        <option value="{{ account.get_key() }}">{{ account.get_name() }}</option>
+        {% endfor %}
+    </select>
+    <input type="hidden" value="{{ account_list.get_name() }}" name="account_list_name">
+     <button type="submit">Remove</button>
+    </form>
+</p>
+{%  endblock %}

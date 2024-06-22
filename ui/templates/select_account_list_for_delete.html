@@ -1,0 +1,16 @@
+{% extends "default.html" %}
+{% block title %}Select Account List to Delete{% endblock %}
+{% block header %}Select the Account List you wish to Delete{% endblock %}
+{% block content %}
+<p>Please use the dropdown menu to select the account list you want to delete, and then press the Delete button to continue.</p>
+<p>
+    <form method="get" action="delete_account_list">
+        <select name="account_list_name">
+            {% for account_list in account_lists %}
+            <option value="{{ account_list.get_name() }}">{{ account_list.get_name() }}</option>
+            {%  endfor %}
+        </select>
+        <button type="submit">Delete</button>
+    </form>
+</p>
+{% endblock %}

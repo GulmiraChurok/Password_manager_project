@@ -1,0 +1,16 @@
+{% extends "default.html" %}
+{% block title %}Select Account List to Print{% endblock %}
+{% block header %}Select the Account List you wish to Print{% endblock %}
+{% block content %}
+<p>Please use the dropdown menu to select the account list you want to print, and then press the Print button to continue.</p>
+<p>
+    <form method="get" action="print_account_list">
+        <select name="account_list_name">
+            {% for account_list in account_lists %}
+            <option value="{{ account_list.get_name() }}">{{ account_list.get_name() }}</option>
+            {%  endfor %}
+        </select>
+        <button type="submit">Print</button>
+    </form>
+</p>
+{% endblock %}

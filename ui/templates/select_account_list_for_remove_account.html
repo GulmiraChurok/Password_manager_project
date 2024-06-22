@@ -1,0 +1,16 @@
+{% extends "default.html" %}
+{% block title %}Select Account List Remove Account{% endblock %}
+{% block header %}Select the Account List you wish to Remove an Account from{% endblock %}
+{% block content %}
+<p>Please use the dropdown menu to select the account list you want to remove an account from, and then press Remove button to continue.</p>
+<p>
+    <form method="get" action="select_account_for_remove">
+        <select name="account_list_name">
+            {% for account_list in account_lists %}
+            <option value="{{ account_list.get_name() }}">{{ account_list.get_name() }}</option>
+            {%  endfor %}
+        </select>
+        <button type="submit">Remove</button>
+    </form>
+</p>
+{% endblock %}

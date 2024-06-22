@@ -1,0 +1,23 @@
+{% extends "default.html" %}
+{% block title %}Select Account Lists to Join{% endblock %}
+{% block header %}Select the Account List you wish to Join{% endblock %}
+{% block content %}
+<p>Please use the dropdown menu to select the account lists you want to join, and then press the Join button to continue.</p>
+<p>
+    <form method="get" action="join_account_lists">
+        Join
+        <select name="account_list_name_1">
+            {% for account_list in account_lists %}
+            <option value="{{ account_list.get_name() }}">{{ account_list.get_name() }}</option>
+            {%  endfor %}
+        </select>
+        to
+        <select name="account_list_name_2">
+            {% for account_list in account_lists %}
+            <option value="{{ account_list.get_name() }}">{{ account_list.get_name() }}</option>
+            {%  endfor %}
+        </select>
+        <button type="submit">Join</button>
+    </form>
+</p>
+{% endblock %}

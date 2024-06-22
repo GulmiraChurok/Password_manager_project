@@ -1,0 +1,10 @@
+{% extends "default.html" %}
+{%  block title %}Printing Account List for {{ account_list.get_name() }}{%  endblock %}
+{%  block header %}Printing Account List for {{ account_list.get_name() }}{% endblock %}
+{%  block content %}
+<ul>
+    {%  for account in account_list %}
+    <li>{{ account }}</li>
+    {%  endfor %}
+</ul>
+{% endblock %}

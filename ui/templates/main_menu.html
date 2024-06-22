@@ -1,0 +1,18 @@
+{% extends "default.html" %}
+{% block title %}Manage Account Lists{%  endblock %}
+{% block header %}Please Select an Item from the List Below{% endblock %}
+{% block content %}
+    <ul>
+        <li><a href="/print_account_lists">Print the List of All Account Lists</a></li>
+        <li><a href="/select_account_list_for_print">Select an Account List and Print it</a></li>
+        <li><a href="/type_account_list_for_add">Add a New Account list</a></li>
+        <li><a href="/select_account_list_for_delete">Delete an Account List</a></li>
+        <li><a href="/get_account_password_for_update">Update an Account's Password</a></li>
+        <li><a href="/select_account_list_for_remove_account">Remove an Account from an Account List</a></li>
+        <li><a href="/select_account_lists_for_join">Join Two Account Lists</a></li>
+    </ul>
+{% endblock %}
+{% block footer %}
+<hr>
+<p>Account List Manager, a sample project for work</p>
+{% endblock %}
